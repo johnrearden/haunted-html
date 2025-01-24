@@ -28,7 +28,7 @@ nameField.addEventListener('input', () => {
 
 // Add an event listener to the checkoutButton to move it to the right
 function onMouseOverCorrectPosition(event) {
-    event.target.style.transform="translateX(400px)";
+    event.target.style.transform="translateX(250px)";
     event.target.innerText = "But you can never leave...";
     event.target.removeEventListener('mouseover', onMouseOverCorrectPosition);
 

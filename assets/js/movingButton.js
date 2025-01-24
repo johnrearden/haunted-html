@@ -33,7 +33,7 @@ nameField.addEventListener('input', () => {
 
 // Add an event listener to the checkoutButton to move it to the right
 function onMouseOverCorrectPosition(event) {
-    event.target.style.transform="translateX(300px)";
+    event.target.style.transform="translateY(100px)";
     event.target.innerText = "But you can never leave...";
     event.target.removeEventListener('mouseover', onMouseOverCorrectPosition);
 
@@ -45,7 +45,7 @@ function onMouseOverCorrectPosition(event) {
 
 // Add an event listener to the checkoutButton to move it back to where it should be
 function onMouseOverSpookyPosition(event) {
-    event.target.style.transform="translateX(0)";
+    event.target.style.transform="translateY(0)";
     event.target.innerText = "Checkout (anytime you want)";
     event.target.removeEventListener('mouseover', onMouseOverSpookyPosition);
 

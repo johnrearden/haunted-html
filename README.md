@@ -1,2 +1,3 @@
-# javascript-debugging
-Allows you to practise your javascript debugging skills!
+# Haunted HTML
+
+### Messing around with user interaction triggering CSS transforms on the page.

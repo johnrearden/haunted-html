@@ -6,29 +6,34 @@ const spookyPhrase = [
 // A counter to keep track of the current word in the spookyPhrase
 let counter = 0;
 
+
 // Get the elements we need to manipulate
 const checkoutButton = document.getElementById('checkout-button');
 const nameField = document.getElementById('name');
 const textArea = document.getElementById('description');
 const titleHeading = document.getElementById('title-heading');
+const body = document.querySelector('body');
 
-// Add an event listener to the nameField
+
+// Add an event listener to the nameField, and listen for the input event
 nameField.addEventListener('input', () => {
 
     // Add the next word from the spookyPhrase to the textArea
     const currentText = textArea.value;
-    const nextWord = spookyPhrase[counter % spookyPhrase.length];
+    const index = counter % spookyPhrase.length;
+    const nextWord = spookyPhrase[index];
     textArea.value = currentText + " " + nextWord + " ";
     counter++;
 
-    // Rotate the titleHeading vertically
-    const rotation = counter % 2 === 0 ? 0 : 180;
-    titleHeading.style.transform = `rotateX(${rotation}deg)`;
+    // Trigger the squishText animation
+    titleHeading.classList.remove('animate');
+    void titleHeading.offsetWidth; // Trigger reflow to restart the animation
+    titleHeading.classList.add('animate');
 })
 
 // Add an event listener to the checkoutButton to move it to the right
 function onMouseOverCorrectPosition(event) {
-    event.target.style.transform="translateX(250px)";
+    event.target.style.transform="translateX(300px)";
     event.target.innerText = "But you can never leave...";
     event.target.removeEventListener('mouseover', onMouseOverCorrectPosition);
 
@@ -36,7 +41,6 @@ function onMouseOverCorrectPosition(event) {
     setTimeout(() => {
         event.target.addEventListener('mouseover', onMouseOverSpookyPosition);
     }, 400);
-    
 }
 
 // Add an event listener to the checkoutButton to move it back to where it should be

@@ -1,0 +1,68 @@
+body {
+    background-image: url('../images/haunted_house.png');
+    color: white;
+    font-family: 'Henny Penny', Arial, sans-serif;
+    transition: .4s all;
+}
+
+h1 {
+    transition: 0.5s all;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.animate {
+    animation: squishText 0.6s;
+    animation-iteration-count: 1;
+}
+
+button,
+span,
+p {
+    font-family: 'Henny Penny', Arial, sans-serif;
+}
+
+textarea, input[type="text"], button {
+    font-size: 0.8rem;
+    background: rgb(0, 0, 0, 0.3);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+button {
+    transition: 0.1s all;
+    border: 1px solid white;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+}
+
+@keyframes squishText {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.9);
+    }
+    20% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0.93);
+    }
+    40% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    60% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(0.97);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
